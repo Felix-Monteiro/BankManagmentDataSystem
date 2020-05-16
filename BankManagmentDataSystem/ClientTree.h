@@ -14,7 +14,9 @@ public:
 	void InsertAccount(int AccountNumber, int Amount);
 	Client* FindMin(Client* root);
 	struct Client* DeleteAccount(struct Client* root, int AccountNumber);
-	struct Client* Getsuccessor(int AccountNumber, int Amount);
+	struct Client* Getsuccessor(Client* root, int AccountNumber);
+	bool Search(Client* root, int AccountNumber);
+	int FindHeight(struct Client* root);
 private:
 
 };

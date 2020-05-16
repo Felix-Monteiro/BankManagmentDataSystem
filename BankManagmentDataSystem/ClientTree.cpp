@@ -69,7 +69,7 @@ Client* ClientTree::DeleteAccount(Client* root, int AccountNumber)
 	if (root == NULL) return root;
 	else if (AccountNumber < root->AccountNumber) root->leftChild = DeleteAccount(root->leftChild, AccountNumber);
 	else if (AccountNumber > root->AccountNumber) root->rightChild = DeleteAccount(root->rightChild, AccountNumber);
-	// Account Found ready to be deleted	
+	// Account Found-Ready to be deleted	
 
 	else {
 
@@ -101,9 +101,9 @@ Client* ClientTree::DeleteAccount(Client* root, int AccountNumber)
 	return root;
 }
 
-Client* ClientTree::Getsuccessor(int AccountNumber, int Amount)
+Client* ClientTree::Getsuccessor(Client* root, int AccountNumber)
 {
-	// Search the Node - O(h)
+	// Search the Node - O(n)
 
 	struct Client* current = Find(root);
 	if (current == NULL) return NULL;
@@ -111,9 +111,9 @@ Client* ClientTree::Getsuccessor(int AccountNumber, int Amount)
 	cout << "...\n" << endl;
 	Sleep(3000);
 	if (current->rightChild != NULL) {  //Case 1: Node has right subtree
-		return FindMin(current->rightChild); // O(h)
+		return FindMin(current->rightChild); // O(n)
 	}
-	else {   //Case 2: No right subtree  - O(h)
+	else {   //Case 2: No right subtree  - O(n)
 		struct Client* successor = NULL;
 		struct Client* ancestor = root;
 		while (ancestor != current) {
@@ -126,6 +126,32 @@ Client* ClientTree::Getsuccessor(int AccountNumber, int Amount)
 		}
 		return successor;
 	}
+}
+
+bool ClientTree::Search(Client* root, int AccountNumber)
+{
+	if (root == NULL) {
+		return false;
+	}
+	else if (root->AccountNumber == AccountNumber) {
+		return true;
+
+	}
+	else if (AccountNumber <= root->AccountNumber) {
+		return Search(root->leftChild, AccountNumber);
+	}
+	else {
+		return Search(root->rightChild, AccountNumber);
+	}
+
+}
+
+int ClientTree::FindHeight(Client* root)
+{
+	if (root == NULL) {
+		return-1;
+	}
+	return max(FindHeight(root->leftChild), FindHeight(root->rightChild)) + 1;
 }
 
 
