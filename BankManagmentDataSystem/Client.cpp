@@ -17,8 +17,6 @@ void Client::Display()
 
 bool Client::LessThan(Client* c1, Client* c2)
 {
-
-
 	if (c1->AccountNumber< c2->AccountNumber)
 		return true;
 	else

@@ -13,11 +13,8 @@ public:
 
 	Client(int AccountNumber, int Amount);
 	void Display();
-	int Factorial(int n);
 	bool LessThan(Client* c1, Client* c2);
 
-
 private:
-
 };
 
