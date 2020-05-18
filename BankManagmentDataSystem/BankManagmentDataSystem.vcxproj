@@ -156,6 +156,8 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientTree.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Pins.h" />
+    <ClInclude Include="TPriorityQueue.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

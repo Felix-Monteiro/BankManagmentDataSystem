@@ -14,7 +14,6 @@ public:
 	Client(int AccountNumber, int Amount);
 	void Display();
 	bool LessThan(Client* c1, Client* c2);
-
 private:
 };
 

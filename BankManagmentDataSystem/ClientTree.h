@@ -18,6 +18,10 @@ public:
 	void InsertAccount(int AccountNumber, int Amount);
 	bool Search(Client* root, int AccountNumber);
 	int FindHeight(struct Client* root);
+
+	bool IsBst(Client* root, int minValue, int maxValue);
+
+
 private:
 
 };

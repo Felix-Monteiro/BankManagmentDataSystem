@@ -10,10 +10,7 @@
 class Menu
 {
 public:
-
 	int DisplayMenuOptions();
-
 private:
-
 };
 

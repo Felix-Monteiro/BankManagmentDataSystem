@@ -9,6 +9,7 @@ Client::Client(int AccountNumber, int Amount)
 	rightChild = 0;
 }
 
+
 void Client::Display()
 {
 	cout << "-Account Number: " << this->AccountNumber << " -Amount: " << this->Amount <<" $"<< endl;

@@ -154,5 +154,22 @@ int ClientTree::FindHeight(Client* root)
 	return max(FindHeight(root->leftChild), FindHeight(root->rightChild)) + 1;
 }
 
+bool ClientTree::IsBst(Client* root, int minValue , int maxValue)
+{
+	if (root == NULL)
+	{
+		return true;
+	}
+	if (root->AccountNumber > minValue && root->AccountNumber < maxValue && IsBst(root->leftChild, minValue ,root->AccountNumber) && IsBst(root->rightChild,root->AccountNumber ,maxValue))
+	{
+		return true;
+	}
+	else {
+		cout << "Binary Search Tree Broken!";
+		return false; }
+}
+
+
+
 
 
