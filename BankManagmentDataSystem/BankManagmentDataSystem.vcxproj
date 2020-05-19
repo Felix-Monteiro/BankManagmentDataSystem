@@ -150,13 +150,17 @@
     <ClCompile Include="BankManagmentDataSystem.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientTree.cpp" />
+    <ClCompile Include="EmployeesHashTable.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="StaffInfoStr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientTree.h" />
+    <ClInclude Include="EmployeesHashTable.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Pins.h" />
+    <ClInclude Include="StaffInfoStr.h" />
     <ClInclude Include="TPriorityQueue.h" />
   </ItemGroup>
   <ItemGroup>
