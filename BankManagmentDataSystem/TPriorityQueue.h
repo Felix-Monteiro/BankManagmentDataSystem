@@ -16,7 +16,6 @@ public:
 };
 
 
-
 template <class T>
 TPriorityQueue<T>::TPriorityQueue(int size) :size(size) {
 	data = new T * [size];

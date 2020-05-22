@@ -20,6 +20,21 @@ Client* ClientTree::Find(Client* key)
 	return current;
 }
 
+//Function Overloading- In order to display Account details
+Client* ClientTree::Find(int key)
+{
+	Client* current = root;
+	while (current->AccountNumber != key) {
+		if (key < current->AccountNumber)
+			current = current->leftChild;
+		else
+			current = current->rightChild;
+		if (current == 0)
+			return 0;
+	}
+	return current;
+}
+
 void ClientTree::DisplayInOrder(Client* localRoot)
 {
 	if (localRoot != 0) {

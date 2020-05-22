@@ -7,7 +7,8 @@ using namespace std;
 
 int main()
 {
-	////////////////////////////////////////
+	system("color e4");
+
 	Menu MenuClass;
 	MenuClass.DisplayMenuOptions();
 }

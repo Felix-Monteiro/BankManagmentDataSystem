@@ -8,8 +8,9 @@ using namespace std;
 class EmployeesHashTable
 {
 public:
-	StaffInfoStr** data;
+
 	int size;
+	StaffInfoStr** data;
 
 	EmployeesHashTable(int size);
 	void Display();

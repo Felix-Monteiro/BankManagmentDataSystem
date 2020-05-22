@@ -10,7 +10,8 @@ public:
 	Client* root;
 
 	ClientTree();
-	Client *Find(Client* key);
+	Client* Find(Client* key);
+	Client* Find(int key);
 	Client* FindMin(Client* root);
 	struct Client* DeleteAccount(struct Client* root, int AccountNumber);
 	struct Client* Getsuccessor(Client* root, int AccountNumber);
@@ -19,8 +20,6 @@ public:
 	bool Search(Client* root, int AccountNumber);
 	int FindHeight(struct Client* root);
 	bool IsBst(Client* root, int minValue, int maxValue);
-
-
 private:
 };
 

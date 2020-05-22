@@ -3,7 +3,7 @@
 EmployeesHashTable::EmployeesHashTable(int size)
 {
 	this->size = size;
-	data = new StaffInfoStr * [size]; //array of Staff Info pointers
+	data = new StaffInfoStr * [size]; //Array of Staff Info pointers
 	for (int i = 0; i < size; i++)
 		data[i] = NULL;
 }
@@ -34,7 +34,6 @@ void EmployeesHashTable::Insert(StaffInfoStr* item)
 	}
 	data[hash] = item;
 }
-
 
 StaffInfoStr* EmployeesHashTable::Delete(string key)
 {

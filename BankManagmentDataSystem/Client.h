@@ -6,10 +6,10 @@ using namespace std;
 class Client
 {
 public:
-	Client* leftChild;
-	Client* rightChild;
 	int AccountNumber;
 	int Amount;
+	Client* leftChild;
+	Client* rightChild;
 
 	Client(int AccountNumber, int Amount);
 	void Display();

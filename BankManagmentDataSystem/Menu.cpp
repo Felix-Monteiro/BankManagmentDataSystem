@@ -4,7 +4,7 @@ using namespace std;
 
 int Menu::DisplayMenuOptions()
 {
-	cout << "\n              ==== Bank Database Managment System ====\n\n" << endl;
+	cout << "\n              ====Bank Database Managment System====\n" << endl;
 	cout << "====================================================================" << endl;
 	int x = 1;
 	srand(time(0));
@@ -41,25 +41,26 @@ int Menu::DisplayMenuOptions()
 	Sleep(2000);
 	system("cls");
 	/////////////////////////////////////////////////////////////////////////////////////////
-	cout << "\n              ====Bank Database Managment System====\n\n" << endl;
+	cout << "\n              ====Bank Database Managment System====\n" << endl;
 	cout << "====================================================================" << endl;
 	while (x > 0)
 	{
 		//Menu Interface
-		cout << "\n====================================================================" << endl;
+		cout << "====================================================================\n" << endl;
 		cout << "                          === Menu ===" << endl;
-		cout << "     -Type the respective number to execute an operation:\n\n" << endl;
+		cout << "     -Type the respective number to execute an operation:" << endl;
 		cout << "====================================================================" << endl;
+		cout << "====================================================================\n" << endl;
 		cout << "                    ==== Clients Operations ====\n" << endl;
 		cout << "1-Display Clients Database        2-Search a Respective Account " << endl;
 		cout << "3-Delete an Account               4-Find the Successor of an Account" << endl;
 		cout << "5-Find the Height of the BST      6-Unlock Client Account"<< endl;
-		cout << "\n====================================================================" << endl;
+		cout << "====================================================================\n" << endl;
 		cout << "                    ==== Staff Operations ====\n" << endl;
 		cout << "7-Display List of Bank Employees  8-Register a New Employee" << endl;
 		cout << "9-Remove an Employee              " << endl;
+		cout << "\n0-Quit" << endl;
 		cout << "====================================================================" << endl;
-		cout << "0-Quit" << endl;
 		cout << "====================================================================" << endl;
 		cout << "->";
 		cin >> x;
@@ -91,10 +92,15 @@ int Menu::DisplayMenuOptions()
 
 			cout << "Enter the Account Number to be searched:";
 			cin >> number;
-			//If number is found, print "EXISTS" and the account number
-			if (BankTree->Search(BankTree->root, number) == true) cout << "Account Exists!\n" << "Account Number: " << number << "\n";
+			//If the Account is found, print "EXISTS", the account number and the account amound
+			if (BankTree->Search(BankTree->root, number) == true) {
+				Client* found = BankTree->Find(number);
+				cout << "Valid Account!\n";
+				cout << "====================================" << endl;
+				cout<< "Account Number: " << found->AccountNumber << endl;
+				cout << "Amount: " << found->Amount << "$"<< endl;
+			} 
 			else cout << "Not Found\n";
-			cout << "\n" << endl;
 		}break;
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		//Delete an Account (Tree DS)
@@ -128,9 +134,6 @@ int Menu::DisplayMenuOptions()
 			if (successor == NULL) cout << "No successor Found\n";
 			else
 				cout << "The successor is the Account Number: " << successor->AccountNumber << "\n";
-
-
-
 		}break;
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		//Find the Height of the Root of this Binary tree database Structure (Tree DS)
@@ -158,13 +161,12 @@ int Menu::DisplayMenuOptions()
 				Pins* obj = templateIDs->Remove();
 				cout << "Client's Name: " << obj->name << "\tClient Temporary Pin: " << obj->key  << endl;
 			}
-
 		}break;
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		//Displat the Staff Database (Hash Table DS)
 		case 7:
 		{
-			cout << "\n      ==== Staff Database ====" << endl;
+			cout << "\n                            ==== Staff Database ====\n" << endl;
 			StaffTable->Display();
 			cout << "\n" << endl;
 
@@ -184,14 +186,16 @@ int Menu::DisplayMenuOptions()
 				if (Eyear=="0")
 				{
 					cout << "Enter the New Employeer Name:";
-					cin >> newE;
+					cin.get();
+					getline(cin, newE);
 
 					cout << "Enter the New Employeer ID:";
-					cin >> IDE;
+					cin.get();
+					getline(cin, IDE);
 				}
 
 				StaffTable->Insert(new StaffInfoStr(IDE, newE, Eyear));
-				cout << "New Employee Added!";
+				cout << "\nNew Employee Added!\n";
 		}break;
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		//Delete of a Staff Member (Hash Table DS)
@@ -206,7 +210,7 @@ int Menu::DisplayMenuOptions()
 			cout << "Enter Employeer ID:";
 			cin >> ID;
 			StaffTable->Delete(ID);
-			cout << "====================================================================" << endl;
+			cout << "====================================" << endl;
 			cout << "Employee Deleted!\n";
 
 		}break;

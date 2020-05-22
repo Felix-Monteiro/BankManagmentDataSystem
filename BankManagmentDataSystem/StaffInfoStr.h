@@ -9,6 +9,7 @@ public:
 	string key;
 	string name;
 	string years;
+
 	StaffInfoStr(string key, string name,string years);
 };
 
